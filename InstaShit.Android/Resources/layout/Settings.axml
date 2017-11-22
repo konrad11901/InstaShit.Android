@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    <ScrollView
+        p1:layout_width="match_parent"
+        p1:layout_height="match_parent"
+        p1:id="@+id/scrollView1">
+        <LinearLayout
+            p1:orientation="vertical"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="match_parent"
+            p1:id="@+id/linearLayout1"
+            p1:scrollbars="vertical">
+            <LinearLayout
+                p1:orientation="horizontal"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/linearLayout2">
+                <TextView
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:layout_width="wrap_content"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/textView1"
+                    p1:text="Login:" />
+                <EditText
+                    p1:layout_width="match_parent"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/loginText"
+                    p1:layout_marginLeft="10px" />
+            </LinearLayout>
+            <LinearLayout
+                p1:orientation="horizontal"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/linearLayout2">
+                <TextView
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:layout_width="wrap_content"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/textView1"
+                    p1:text="Password:" />
+                <EditText
+                    p1:inputType="textPassword"
+                    p1:layout_width="match_parent"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/passwordText" />
+            </LinearLayout>
+            <LinearLayout
+                p1:orientation="horizontal"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/linearLayout2">
+                <TextView
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:layout_width="wrap_content"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/textView1"
+                    p1:text="Mimimum sleep time (ms):" />
+                <EditText
+                    p1:inputType="number"
+                    p1:layout_width="match_parent"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/minSleep" />
+            </LinearLayout>
+            <LinearLayout
+                p1:orientation="horizontal"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/linearLayout2">
+                <TextView
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:layout_width="wrap_content"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/textView1"
+                    p1:text="Maximum sleep time: (ms)" />
+                <EditText
+                    p1:inputType="number"
+                    p1:layout_width="match_parent"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/maxSleep" />
+            </LinearLayout>
+            <LinearLayout
+                p1:orientation="horizontal"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/linearLayout2">
+                <TextView
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:layout_width="wrap_content"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/textView1"
+                    p1:text="Allow typo:" />
+                <Switch
+                    p1:layout_width="match_parent"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/typoSwitch" />
+            </LinearLayout>
+            <LinearLayout
+                p1:orientation="horizontal"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/linearLayout2">
+                <TextView
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:layout_width="wrap_content"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/textView1"
+                    p1:text="Allow synonyms:" />
+                <Switch
+                    p1:layout_width="match_parent"
+                    p1:layout_height="wrap_content"
+                    p1:id="@+id/synonymSwitch" />
+            </LinearLayout>
+            <Button
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/editDataButton"
+                p1:text="Edit IntelligentMistakesData" />
+            <Button
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/saveButton"
+                p1:layout_marginTop="10px"
+                p1:text="Save" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
