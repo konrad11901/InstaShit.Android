@@ -15,31 +15,31 @@ namespace InstaShitAndroid
     [Activity(Label = "IntelligentMistakesDataEntryActivity")]
     public class IntelligentMistakesDataEntryActivity : Activity
     {
-        EditText riskPercentage;
-        EditText maxMistakes;
-        Button saveButton;
+        EditText _riskPercentage;
+        EditText _maxMistakes;
+        Button _saveButton;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.IntelligentMistakesDataEntry);
-            riskPercentage = FindViewById<EditText>(Resource.Id.riskPercentage);
-            riskPercentage.SetFilters(new IInputFilter[] {new InputFilterMinMax(0, 100)});
-            maxMistakes = FindViewById<EditText>(Resource.Id.maxMistakes);
-            maxMistakes.SetFilters(new IInputFilter[] { new InputFilterMinMax(-1, 100) });
-            saveButton = FindViewById<Button>(Resource.Id.saveButton);
+            _riskPercentage = FindViewById<EditText>(Resource.Id.riskPercentage);
+            _riskPercentage.SetFilters(new IInputFilter[] {new InputFilterMinMax(0, 100)});
+            _maxMistakes = FindViewById<EditText>(Resource.Id.maxMistakes);
+            _maxMistakes.SetFilters(new IInputFilter[] { new InputFilterMinMax(-1, 100) });
+            _saveButton = FindViewById<Button>(Resource.Id.saveButton);
             if (Intent.Extras.GetInt("entryid") != -1)
             {
                 var entry = JsonConvert.DeserializeObject<IntelligentMistakesDataEntry>(Intent.Extras.GetString("entry", ""));
-                riskPercentage.Text = entry.RiskPercentage.ToString();
-                maxMistakes.Text = entry.MaxNumberOfMistakes.ToString();
+                _riskPercentage.Text = entry.RiskPercentage.ToString();
+                _maxMistakes.Text = entry.MaxNumberOfMistakes.ToString();
             }
-            saveButton.Click += (sender, e) =>
+            _saveButton.Click += (sender, e) =>
             {
                 var localEntry = new IntelligentMistakesDataEntry()
                 {
-                    RiskPercentage = (riskPercentage.Text != "" ? Int32.Parse(riskPercentage.Text) : 0),
-                    MaxNumberOfMistakes = (maxMistakes.Text != "" ? Int32.Parse(maxMistakes.Text) : 0)
+                    RiskPercentage = (_riskPercentage.Text != "" ? Int32.Parse(_riskPercentage.Text) : 0),
+                    MaxNumberOfMistakes = (_maxMistakes.Text != "" ? Int32.Parse(_maxMistakes.Text) : 0)
                 };
                 Intent resultIntent = new Intent();
                 resultIntent.PutExtra("entry", JsonConvert.SerializeObject(localEntry));
@@ -67,7 +67,7 @@ namespace InstaShitAndroid
             }
             catch (System.Exception)
             {
-               
+                // ignored
             }
             return new Java.Lang.String(string.Empty);
         }

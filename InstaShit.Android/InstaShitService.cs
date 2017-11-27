@@ -4,15 +4,13 @@ using Android.Support.V4.App;
 using Android.Support.V4.Content;
 using InstaShitCore;
 using System.Threading.Tasks;
-using Android.Runtime;
-using InstaShitAndroid;
 
 namespace InstaShitAndroid
 {
     [Service]
     public class InstaShitService : IntentService
     {
-        public static volatile bool shouldContinue = true;
+        public static volatile bool ShouldContinue = true;
         public InstaShitService() : base("InstaShitService")
         {
             
@@ -34,10 +32,10 @@ namespace InstaShitAndroid
                 .SetSmallIcon(Resource.Mipmap.Icon)
                 .SetContentIntent(pendingIntent)
                 .SetOngoing(true);
-            NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
+            NotificationManager notificationManager = (NotificationManager)GetSystemService(NotificationService);
             notificationManager.Notify(1, notification.Build());
             InstaShitClasses.InstaShit instaShit = new InstaShitClasses.InstaShit();
-            if (!shouldContinue)
+            if (!ShouldContinue)
             {
                 StopSelf();
                 SendMessage("STOPPED");
@@ -52,7 +50,7 @@ namespace InstaShitAndroid
                 notificationManager.Cancel(1);
                 return;
             }
-            if (!shouldContinue)
+            if (!ShouldContinue)
             {
                 StopSelf();
                 SendMessage("STOPPED");
@@ -65,7 +63,7 @@ namespace InstaShitAndroid
                 SendMessage("It looks like session was already started, continuing.");
             while (true)
             {
-                if (!shouldContinue)
+                if (!ShouldContinue)
                 {
                     StopSelf();
                     SendMessage("STOPPED");
@@ -75,7 +73,7 @@ namespace InstaShitAndroid
                 Answer answer = await instaShit.GetAnswer();
                 if (answer == null)
                     break;
-                if (!shouldContinue)
+                if (!ShouldContinue)
                 {
                     StopSelf();
                     SendMessage("STOPPED");
@@ -85,14 +83,14 @@ namespace InstaShitAndroid
                 int sleepTime = instaShit.GetSleepTime();
                 SendMessage($"Sleeping... ({sleepTime}ms)");
                 await Task.Delay(sleepTime);
-                if (!shouldContinue)
+                if (!ShouldContinue)
                 {
                     StopSelf();
                     SendMessage("STOPPED");
                     notificationManager.Cancel(1);
                     return;
                 }
-                bool correctAnswer = answer.Word == answer.AnswerWord ? true : false;
+                bool correctAnswer = answer.Word == answer.AnswerWord;
                 string message;
                 if (correctAnswer)
                     message = "Attempting to answer";

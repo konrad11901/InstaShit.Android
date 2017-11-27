@@ -15,17 +15,17 @@ namespace InstaShitAndroid
     [Activity(Label = "IntelligentMistakesData")]
     public class IntelligentMistakesDataActivity : ListActivity
     {
-        List<List<IntelligentMistakesDataEntry>> mistakesData;
-        MyAdapter adapter;
+        List<List<IntelligentMistakesDataEntry>> _mistakesData;
+        MyAdapter _adapter;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            mistakesData = JsonConvert.DeserializeObject<List<List<IntelligentMistakesDataEntry>>>(Intent.Extras.GetString("mistakesdata"));
+            _mistakesData = JsonConvert.DeserializeObject<List<List<IntelligentMistakesDataEntry>>>(Intent.Extras.GetString("mistakesdata"));
             UpdateList();
-            this.ListView.ItemClick += (sender, e) => 
+            ListView.ItemClick += (sender, e) => 
             {
                 var intent = new Intent(this, typeof(IntelligentMistakesSessionDataActivity));
-                intent.PutExtra("session", JsonConvert.SerializeObject(mistakesData[e.Position]));
+                intent.PutExtra("session", JsonConvert.SerializeObject(_mistakesData[e.Position]));
                 intent.PutExtra("sessionid", e.Position);
                 Console.WriteLine(e.Position.ToString());
                 StartActivityForResult(intent, 1);
@@ -40,9 +40,9 @@ namespace InstaShitAndroid
                     int id = data.GetIntExtra("sessionid", -1);
                     var newSession = JsonConvert.DeserializeObject<List<IntelligentMistakesDataEntry>>(data.GetStringExtra("session"));
                     if (newSession.Count != 0)
-                        mistakesData[id] = newSession;
+                        _mistakesData[id] = newSession;
                     else
-                        mistakesData.RemoveAt(id);
+                        _mistakesData.RemoveAt(id);
                     UpdateList();
                 }
             }
@@ -53,7 +53,7 @@ namespace InstaShitAndroid
                     var newSession = JsonConvert.DeserializeObject<List<IntelligentMistakesDataEntry>>(data.GetStringExtra("session"));
                     if(newSession.Count != 0)
                     {
-                        mistakesData.Add(newSession);
+                        _mistakesData.Add(newSession);
                         UpdateList();
                     }
                 }
@@ -62,15 +62,15 @@ namespace InstaShitAndroid
         private void UpdateList()
         {
             var items = new List<Tuple<string, string>>();
-            for (int i = 1; i <= mistakesData.Count(); i++)
-                items.Add(new Tuple<string, string>($"Session {i.ToString()}", $"{mistakesData[i - 1].Count()} entries"));
-            adapter = new MyAdapter(this, Android.Resource.Layout.SimpleListItem2, Android.Resource.Id.Text1, items);
-            this.ListAdapter = adapter;
+            for (int i = 1; i <= _mistakesData.Count(); i++)
+                items.Add(new Tuple<string, string>($"Session {i.ToString()}", $"{_mistakesData[i - 1].Count()} entries"));
+            _adapter = new MyAdapter(this, Android.Resource.Layout.SimpleListItem2, Android.Resource.Id.Text1, items);
+            ListAdapter = _adapter;
         }
         public override void OnBackPressed()
         {
             Intent resultIntent = new Intent();
-            resultIntent.PutExtra("mistakesdata", JsonConvert.SerializeObject(mistakesData));
+            resultIntent.PutExtra("mistakesdata", JsonConvert.SerializeObject(_mistakesData));
             SetResult(Result.Ok, resultIntent);
             Finish();
             base.OnBackPressed();
@@ -92,9 +92,9 @@ namespace InstaShitAndroid
             }
             else if(id == Resource.Id.menu_delete)
             {
-                if(mistakesData.Count() != 0)
+                if(_mistakesData.Count() != 0)
                 {
-                    mistakesData.RemoveAt(mistakesData.Count() - 1);
+                    _mistakesData.RemoveAt(_mistakesData.Count() - 1);
                     UpdateList();
                 }
             }

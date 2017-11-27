@@ -14,18 +14,18 @@ namespace InstaShitAndroid
     [Activity(Label = "IntelligentMistakesSessionData")]
     public class IntelligentMistakesSessionDataActivity : ListActivity
     {
-        List<IntelligentMistakesDataEntry> sessionData;
-        ArrayAdapter adapter;
+        List<IntelligentMistakesDataEntry> _sessionData;
+        ArrayAdapter _adapter;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            sessionData = JsonConvert.DeserializeObject<List<IntelligentMistakesDataEntry>>(Intent.Extras.GetString("session"));
+            _sessionData = JsonConvert.DeserializeObject<List<IntelligentMistakesDataEntry>>(Intent.Extras.GetString("session"));
             UpdateList();
-            this.ListView.ItemClick += (sender, e) => 
+            ListView.ItemClick += (sender, e) => 
             {
                 var intent = new Intent(this, typeof(IntelligentMistakesDataEntryActivity));
-                intent.PutExtra("entry", JsonConvert.SerializeObject(sessionData[e.Position]));
+                intent.PutExtra("entry", JsonConvert.SerializeObject(_sessionData[e.Position]));
                 intent.PutExtra("entryid", e.Position);
                 StartActivityForResult(intent, 1);
             };
@@ -34,15 +34,15 @@ namespace InstaShitAndroid
         private void UpdateList()
         {
             var items = new List<string>();
-            for (int i = 1; i <= sessionData.Count(); i++)
+            for (int i = 1; i <= _sessionData.Count(); i++)
                 items.Add($"Entry {i.ToString()}");
-            adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
-            this.ListAdapter = adapter;
+            _adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
+            ListAdapter = _adapter;
         }
         public override void OnBackPressed()
         {
             Intent resultIntent = new Intent();
-            resultIntent.PutExtra("session", JsonConvert.SerializeObject(sessionData));
+            resultIntent.PutExtra("session", JsonConvert.SerializeObject(_sessionData));
             resultIntent.PutExtra("sessionid", Intent.Extras.GetInt("sessionid"));
             SetResult(Result.Ok, resultIntent);
             Finish();
@@ -57,9 +57,9 @@ namespace InstaShitAndroid
                     int id = data.GetIntExtra("entryid", -1);
                     var newEntry = JsonConvert.DeserializeObject<IntelligentMistakesDataEntry>(data.GetStringExtra("entry"));
                     if (newEntry.MaxNumberOfMistakes != 0 && newEntry.RiskPercentage != 0)
-                        sessionData[id] = newEntry;
+                        _sessionData[id] = newEntry;
                     else
-                        sessionData.RemoveAt(id);
+                        _sessionData.RemoveAt(id);
                     UpdateList();
 
                 }
@@ -71,7 +71,7 @@ namespace InstaShitAndroid
                     var newEntry = JsonConvert.DeserializeObject<IntelligentMistakesDataEntry>(data.GetStringExtra("entry"));
                     if(newEntry.MaxNumberOfMistakes != 0 && newEntry.RiskPercentage != 0)
                     {
-                        sessionData.Add(newEntry);
+                        _sessionData.Add(newEntry);
                         UpdateList();
                     }
                 }
@@ -93,9 +93,9 @@ namespace InstaShitAndroid
             }
             else if (id == Resource.Id.menu_delete)
             {
-                if(sessionData.Count() != 0)
+                if(_sessionData.Count() != 0)
                 {
-                    sessionData.RemoveAt(sessionData.Count() - 1);
+                    _sessionData.RemoveAt(_sessionData.Count() - 1);
                     UpdateList();
                 }
             }
