@@ -42,9 +42,9 @@
         android:id="@+id/logButton"
         android:enabled="true" />
     <TextView
-        android:text="InstaShit.Android v0.3 - Created by Konrad Krawiec"
+        android:text="InstaShit.Android vx.x - Created by Konrad Krawiec"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:id="@+id/footerText" />
 </LinearLayout>

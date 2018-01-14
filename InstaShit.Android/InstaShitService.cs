@@ -107,6 +107,15 @@ namespace InstaShitAndroid
                 }
             }
             SendMessage("Session successfully finished.");
+            ChildResults childResults = await instaShit.GetResultsAsync();
+            if (childResults.PreviousMark != "NONE")
+                SendMessage("Mark from previous week: " + childResults.PreviousMark);
+            SendMessage("Days of work in this week: " + childResults.DaysOfWork);
+            SendMessage("From extracurricular words: +" + childResults.ExtraParentWords);
+            SendMessage("Teacher's words: " + childResults.TeacherWords);
+            SendMessage("Extracurricular words in current edition: " + childResults.ParentWords);
+            SendMessage("Mark as of today at least: " + childResults.CurrrentMark);
+            SendMessage("Days until the end of this week: " + childResults.WeekRemainingDays);
             SendMessage("Saving session data...");
             instaShit.SaveSessionData();
             SendMessage("FINISHED");

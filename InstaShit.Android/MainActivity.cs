@@ -25,6 +25,9 @@ namespace InstaShitAndroid
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            var FooterText = FindViewById<TextView>(Resource.Id.footerText);
+            string version = PackageManager.GetPackageInfo(PackageName, 0).VersionName;
+            FooterText.Text = $"InstaShit.Android v{version} - Created by Konrad Krawiec";
             StatusText = FindViewById<TextView>(Resource.Id.statusTextView);
             StartButton = FindViewById<Button>(Resource.Id.startButton);
             ProgressBar = FindViewById<ProgressBar>(Resource.Id.progressBar);
