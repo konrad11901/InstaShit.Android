@@ -96,7 +96,7 @@ namespace InstaShitAndroid
                     message = "Attempting to answer";
                 else
                     message = $"Attempting to incorrectly answer(\"{answer.AnswerWord}\")";
-                message += $" question about word \"{answer.Word}\" with id {answer.WordID}";
+                message += $" question about word \"{answer.Word}\" with id {answer.WordId}";
                 SendMessage(message);
                 if (await instaShit.TryAnswerQuestion(answer))
                     SendMessage("SUCCESS");
