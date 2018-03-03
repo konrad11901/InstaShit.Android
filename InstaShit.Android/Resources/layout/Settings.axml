@@ -127,6 +127,12 @@
                 p1:id="@+id/saveButton"
                 p1:layout_marginTop="10px"
                 p1:text="Save" />
+            <Button
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/advancedButton"
+                p1:layout_marginTop="10px"
+                p1:text="Advanced mode" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

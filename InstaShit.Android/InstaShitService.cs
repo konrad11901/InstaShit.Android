@@ -2,8 +2,8 @@
 using Android.Content;
 using Android.Support.V4.App;
 using Android.Support.V4.Content;
-using InstaShitCore;
 using System.Threading.Tasks;
+using InstaShitAndroid.InstaShitClasses;
 
 namespace InstaShitAndroid
 {
@@ -29,12 +29,12 @@ namespace InstaShitAndroid
             var notification = new NotificationCompat.Builder(this)
                 .SetContentTitle(Resources.GetString(Resource.String.app_name))
                 .SetContentText("InstaShit is now running.")
-                .SetSmallIcon(Resource.Mipmap.Icon)
+                .SetSmallIcon(Resource.Drawable.ic_stat_name)
                 .SetContentIntent(pendingIntent)
                 .SetOngoing(true);
             NotificationManager notificationManager = (NotificationManager)GetSystemService(NotificationService);
             notificationManager.Notify(1, notification.Build());
-            InstaShitClasses.InstaShit instaShit = new InstaShitClasses.InstaShit();
+            InstaShit instaShit = new InstaShit();
             if (!ShouldContinue)
             {
                 StopSelf();
@@ -57,7 +57,7 @@ namespace InstaShitAndroid
                 notificationManager.Cancel(1);
                 return;
             }
-            if (await instaShit.IsNewSession())
+            if (await instaShit.IsNewSessionAsync())
                 SendMessage("Starting new session");
             else
                 SendMessage("It looks like session was already started, continuing.");
@@ -70,7 +70,7 @@ namespace InstaShitAndroid
                     notificationManager.Cancel(1);
                     return;
                 }
-                Answer answer = await instaShit.GetAnswer();
+                var answer = await instaShit.GetAnswerAsync();
                 if (answer == null)
                     break;
                 if (!ShouldContinue)
@@ -80,7 +80,7 @@ namespace InstaShitAndroid
                     notificationManager.Cancel(1);
                     return;
                 }
-                int sleepTime = instaShit.GetSleepTime();
+                int sleepTime = instaShit.SleepTime;
                 SendMessage($"Sleeping... ({sleepTime}ms)");
                 await Task.Delay(sleepTime);
                 if (!ShouldContinue)
@@ -98,7 +98,7 @@ namespace InstaShitAndroid
                     message = $"Attempting to incorrectly answer(\"{answer.AnswerWord}\")";
                 message += $" question about word \"{answer.Word}\" with id {answer.WordId}";
                 SendMessage(message);
-                if (await instaShit.TryAnswerQuestion(answer))
+                if (await instaShit.TryAnswerQuestionAsync(answer))
                     SendMessage("SUCCESS");
                 else
                 {
@@ -107,7 +107,7 @@ namespace InstaShitAndroid
                 }
             }
             SendMessage("Session successfully finished.");
-            ChildResults childResults = await instaShit.GetResultsAsync();
+            var childResults = await instaShit.GetResultsAsync();
             if (childResults.PreviousMark != "NONE")
                 SendMessage("Mark from previous week: " + childResults.PreviousMark);
             SendMessage("Days of work in this week: " + childResults.DaysOfWork);
@@ -121,7 +121,7 @@ namespace InstaShitAndroid
             SendMessage("FINISHED");
             notification = new NotificationCompat.Builder(this)
                 .SetContentTitle(Resources.GetString(Resource.String.app_name))
-                .SetSmallIcon(Resource.Mipmap.Icon)
+                .SetSmallIcon(Resource.Drawable.ic_stat_name)
                 .SetContentText("Session successfully finished.")
                 .SetContentIntent(pendingIntent);
             notificationManager.Notify(1, notification.Build());

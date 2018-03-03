@@ -65,6 +65,12 @@ namespace InstaShitAndroid
                 intent.PutExtra("mistakesdata", JsonConvert.SerializeObject(_mistakesData));
                 StartActivityForResult(intent, 1);
             };
+            Button advancedButton = FindViewById<Button>(Resource.Id.advancedButton);
+            advancedButton.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(AdvancedSettingsActivity));
+                StartActivity(intent);
+            };
         }
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
