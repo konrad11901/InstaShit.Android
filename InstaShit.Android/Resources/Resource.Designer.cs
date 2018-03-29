@@ -246,68 +246,68 @@ namespace InstaShitAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b0020
-			public const int action0 = 2131427360;
-			
-			// aapt resource value: 0x7f0b001d
-			public const int action_container = 2131427357;
-			
-			// aapt resource value: 0x7f0b0024
-			public const int action_divider = 2131427364;
-			
-			// aapt resource value: 0x7f0b001e
-			public const int action_image = 2131427358;
-			
 			// aapt resource value: 0x7f0b001f
-			public const int action_text = 2131427359;
-			
-			// aapt resource value: 0x7f0b002e
-			public const int actions = 2131427374;
-			
-			// aapt resource value: 0x7f0b0039
-			public const int advancedButton = 2131427385;
-			
-			// aapt resource value: 0x7f0b0018
-			public const int answerCountText = 2131427352;
-			
-			// aapt resource value: 0x7f0b0006
-			public const int async = 2131427334;
-			
-			// aapt resource value: 0x7f0b0007
-			public const int blocking = 2131427335;
-			
-			// aapt resource value: 0x7f0b000d
-			public const int buttonLayout = 2131427341;
-			
-			// aapt resource value: 0x7f0b0021
-			public const int cancel_action = 2131427361;
-			
-			// aapt resource value: 0x7f0b0029
-			public const int chronometer = 2131427369;
-			
-			// aapt resource value: 0x7f0b0038
-			public const int editDataButton = 2131427384;
-			
-			// aapt resource value: 0x7f0b0030
-			public const int end_padder = 2131427376;
+			public const int action0 = 2131427359;
 			
 			// aapt resource value: 0x7f0b001c
-			public const int footerText = 2131427356;
+			public const int action_container = 2131427356;
 			
-			// aapt resource value: 0x7f0b0008
-			public const int forever = 2131427336;
+			// aapt resource value: 0x7f0b0023
+			public const int action_divider = 2131427363;
 			
-			// aapt resource value: 0x7f0b002b
-			public const int icon = 2131427371;
+			// aapt resource value: 0x7f0b001d
+			public const int action_image = 2131427357;
+			
+			// aapt resource value: 0x7f0b001e
+			public const int action_text = 2131427358;
+			
+			// aapt resource value: 0x7f0b002d
+			public const int actions = 2131427373;
+			
+			// aapt resource value: 0x7f0b0038
+			public const int advancedButton = 2131427384;
+			
+			// aapt resource value: 0x7f0b0017
+			public const int answerCountText = 2131427351;
+			
+			// aapt resource value: 0x7f0b0005
+			public const int async = 2131427333;
+			
+			// aapt resource value: 0x7f0b0006
+			public const int blocking = 2131427334;
+			
+			// aapt resource value: 0x7f0b000c
+			public const int buttonLayout = 2131427340;
+			
+			// aapt resource value: 0x7f0b0020
+			public const int cancel_action = 2131427360;
+			
+			// aapt resource value: 0x7f0b0028
+			public const int chronometer = 2131427368;
+			
+			// aapt resource value: 0x7f0b0037
+			public const int editDataButton = 2131427383;
 			
 			// aapt resource value: 0x7f0b002f
-			public const int icon_group = 2131427375;
+			public const int end_padder = 2131427375;
+			
+			// aapt resource value: 0x7f0b001b
+			public const int footerText = 2131427355;
+			
+			// aapt resource value: 0x7f0b0007
+			public const int forever = 2131427335;
 			
 			// aapt resource value: 0x7f0b002a
-			public const int info = 2131427370;
+			public const int icon = 2131427370;
 			
-			// aapt resource value: 0x7f0b0009
-			public const int italic = 2131427337;
+			// aapt resource value: 0x7f0b002e
+			public const int icon_group = 2131427374;
+			
+			// aapt resource value: 0x7f0b0029
+			public const int info = 2131427369;
+			
+			// aapt resource value: 0x7f0b0008
+			public const int italic = 2131427336;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int line1 = 2131427328;
@@ -315,116 +315,113 @@ namespace InstaShitAndroid
 			// aapt resource value: 0x7f0b0001
 			public const int line3 = 2131427329;
 			
+			// aapt resource value: 0x7f0b000f
+			public const int linearLayout1 = 2131427343;
+			
 			// aapt resource value: 0x7f0b0010
-			public const int linearLayout1 = 2131427344;
-			
-			// aapt resource value: 0x7f0b0011
-			public const int linearLayout2 = 2131427345;
-			
-			// aapt resource value: 0x7f0b001b
-			public const int logButton = 2131427355;
-			
-			// aapt resource value: 0x7f0b0032
-			public const int loginText = 2131427378;
-			
-			// aapt resource value: 0x7f0b0014
-			public const int maxMistakes = 2131427348;
-			
-			// aapt resource value: 0x7f0b0035
-			public const int maxSleep = 2131427381;
-			
-			// aapt resource value: 0x7f0b0023
-			public const int media_actions = 2131427363;
-			
-			// aapt resource value: 0x7f0b003a
-			public const int menu_add = 2131427386;
-			
-			// aapt resource value: 0x7f0b003b
-			public const int menu_delete = 2131427387;
-			
-			// aapt resource value: 0x7f0b0034
-			public const int minSleep = 2131427380;
-			
-			// aapt resource value: 0x7f0b000a
-			public const int normal = 2131427338;
-			
-			// aapt resource value: 0x7f0b002d
-			public const int notification_background = 2131427373;
-			
-			// aapt resource value: 0x7f0b0026
-			public const int notification_main_column = 2131427366;
-			
-			// aapt resource value: 0x7f0b0025
-			public const int notification_main_column_container = 2131427365;
-			
-			// aapt resource value: 0x7f0b0033
-			public const int passwordText = 2131427379;
-			
-			// aapt resource value: 0x7f0b0017
-			public const int progressBar = 2131427351;
-			
-			// aapt resource value: 0x7f0b000b
-			public const int relativeLayout1 = 2131427339;
-			
-			// aapt resource value: 0x7f0b002c
-			public const int right_icon = 2131427372;
-			
-			// aapt resource value: 0x7f0b0027
-			public const int right_side = 2131427367;
-			
-			// aapt resource value: 0x7f0b0013
-			public const int riskPercentage = 2131427347;
-			
-			// aapt resource value: 0x7f0b000e
-			public const int saveButton = 2131427342;
-			
-			// aapt resource value: 0x7f0b0031
-			public const int scrollView1 = 2131427377;
+			public const int linearLayout2 = 2131427344;
 			
 			// aapt resource value: 0x7f0b001a
-			public const int settingsButton = 2131427354;
+			public const int logButton = 2131427354;
 			
-			// aapt resource value: 0x7f0b000c
-			public const int settingsText = 2131427340;
+			// aapt resource value: 0x7f0b0031
+			public const int loginText = 2131427377;
 			
-			// aapt resource value: 0x7f0b000f
-			public const int shareButton = 2131427343;
+			// aapt resource value: 0x7f0b0013
+			public const int maxMistakes = 2131427347;
 			
-			// aapt resource value: 0x7f0b0019
-			public const int startButton = 2131427353;
-			
-			// aapt resource value: 0x7f0b0016
-			public const int statusTextView = 2131427350;
+			// aapt resource value: 0x7f0b0034
+			public const int maxSleep = 2131427380;
 			
 			// aapt resource value: 0x7f0b0022
-			public const int status_bar_latest_event_content = 2131427362;
+			public const int media_actions = 2131427362;
 			
-			// aapt resource value: 0x7f0b0037
-			public const int synonymSwitch = 2131427383;
+			// aapt resource value: 0x7f0b0039
+			public const int menu_add = 2131427385;
 			
-			// aapt resource value: 0x7f0b0002
-			public const int tag_transition_group = 2131427330;
+			// aapt resource value: 0x7f0b003a
+			public const int menu_delete = 2131427386;
 			
-			// aapt resource value: 0x7f0b0003
-			public const int text = 2131427331;
+			// aapt resource value: 0x7f0b0033
+			public const int minSleep = 2131427379;
 			
-			// aapt resource value: 0x7f0b0004
-			public const int text2 = 2131427332;
+			// aapt resource value: 0x7f0b0009
+			public const int normal = 2131427337;
+			
+			// aapt resource value: 0x7f0b002c
+			public const int notification_background = 2131427372;
+			
+			// aapt resource value: 0x7f0b0025
+			public const int notification_main_column = 2131427365;
+			
+			// aapt resource value: 0x7f0b0024
+			public const int notification_main_column_container = 2131427364;
+			
+			// aapt resource value: 0x7f0b0032
+			public const int passwordText = 2131427378;
+			
+			// aapt resource value: 0x7f0b0016
+			public const int progressBar = 2131427350;
+			
+			// aapt resource value: 0x7f0b000a
+			public const int relativeLayout1 = 2131427338;
+			
+			// aapt resource value: 0x7f0b002b
+			public const int right_icon = 2131427371;
+			
+			// aapt resource value: 0x7f0b0026
+			public const int right_side = 2131427366;
 			
 			// aapt resource value: 0x7f0b0012
-			public const int textView1 = 2131427346;
+			public const int riskPercentage = 2131427346;
+			
+			// aapt resource value: 0x7f0b000d
+			public const int saveButton = 2131427341;
+			
+			// aapt resource value: 0x7f0b0030
+			public const int scrollView1 = 2131427376;
+			
+			// aapt resource value: 0x7f0b0019
+			public const int settingsButton = 2131427353;
+			
+			// aapt resource value: 0x7f0b000b
+			public const int settingsText = 2131427339;
+			
+			// aapt resource value: 0x7f0b000e
+			public const int shareButton = 2131427342;
+			
+			// aapt resource value: 0x7f0b0018
+			public const int startButton = 2131427352;
 			
 			// aapt resource value: 0x7f0b0015
-			public const int textView2 = 2131427349;
+			public const int statusTextView = 2131427349;
 			
-			// aapt resource value: 0x7f0b0028
-			public const int time = 2131427368;
-			
-			// aapt resource value: 0x7f0b0005
-			public const int title = 2131427333;
+			// aapt resource value: 0x7f0b0021
+			public const int status_bar_latest_event_content = 2131427361;
 			
 			// aapt resource value: 0x7f0b0036
-			public const int typoSwitch = 2131427382;
+			public const int synonymSwitch = 2131427382;
+			
+			// aapt resource value: 0x7f0b0002
+			public const int text = 2131427330;
+			
+			// aapt resource value: 0x7f0b0003
+			public const int text2 = 2131427331;
+			
+			// aapt resource value: 0x7f0b0011
+			public const int textView1 = 2131427345;
+			
+			// aapt resource value: 0x7f0b0014
+			public const int textView2 = 2131427348;
+			
+			// aapt resource value: 0x7f0b0027
+			public const int time = 2131427367;
+			
+			// aapt resource value: 0x7f0b0004
+			public const int title = 2131427332;
+			
+			// aapt resource value: 0x7f0b0035
+			public const int typoSwitch = 2131427381;
 			
 			static Id()
 			{
@@ -655,30 +652,18 @@ namespace InstaShitAndroid
 			public const int FontFamily_fontProviderQuery = 2;
 			
 			public static int[] FontFamilyFont = new int[] {
-					16844082,
-					16844083,
-					16844095,
 					2130771974,
 					2130771975,
 					2130771976};
 			
+			// aapt resource value: 1
+			public const int FontFamilyFont_font = 1;
+			
 			// aapt resource value: 0
-			public const int FontFamilyFont_android_font = 0;
+			public const int FontFamilyFont_fontStyle = 0;
 			
 			// aapt resource value: 2
-			public const int FontFamilyFont_android_fontStyle = 2;
-			
-			// aapt resource value: 1
-			public const int FontFamilyFont_android_fontWeight = 1;
-			
-			// aapt resource value: 4
-			public const int FontFamilyFont_font = 4;
-			
-			// aapt resource value: 3
-			public const int FontFamilyFont_fontStyle = 3;
-			
-			// aapt resource value: 5
-			public const int FontFamilyFont_fontWeight = 5;
+			public const int FontFamilyFont_fontWeight = 2;
 			
 			static Styleable()
 			{

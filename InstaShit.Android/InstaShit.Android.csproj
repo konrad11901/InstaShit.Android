@@ -75,9 +75,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="InstaShitCore">
-      <HintPath>..\packages\InstaShitCore.1.0.4\lib\netstandard2.0\InstaShitCore.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Support.Annotations">
       <HintPath>..\packages\Xamarin.Android.Support.Annotations.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Annotations.dll</HintPath>
     </Reference>
@@ -104,6 +101,9 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\packages\Xamarin.Android.Support.v4.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="InstaShitCore">
+      <HintPath>..\packages\InstaShitCore.1.0.6\lib\netstandard2.0\InstaShitCore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
