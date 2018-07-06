@@ -56,8 +56,8 @@
     <EnableProguard>true</EnableProguard>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InstaShitCore, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\InstaShitCore.1.0.7\lib\netstandard2.0\InstaShitCore.dll</HintPath>
+    <Reference Include="InstaShitCore, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InstaShitCore.1.0.8\lib\netstandard2.0\InstaShitCore.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO.Compression" />
