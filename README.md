@@ -4,7 +4,8 @@
 
 InstaShit for Android operating system.
 
-**Support for InstaShit.Android has ended.** No new updates (including InstaShitCore updates and bug fixes) will be provided. InstaShit.Android is buggy and is not fully compatible with Android Oreo. It's strongly recommended to switch to InstaShit.CLI or InstaShit.Bot.
+**Support for InstaShit.Android has ended.** No new updates (including InstaShitCore updates and bug fixes) will be provided. InstaShit.Android is buggy and is not fully compatible with Android 8.0+. It's strongly recommended to switch to InstaShit.CLI or InstaShit.Bot.  
+**Please note that since November 2018 this application doesn't work due to changes introduced to Insta.Ling.** If you really need InstaShit.Android, you can compile it yourself with the newest InstaShitCore, but it's not recommended.
 
 *Note: The support may be restored if I rewrite this app in the future, but as for now, it's not planned.*
 
